@@ -24,4 +24,6 @@ Route::get('/', function () {
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('/images', 'ImageController');
+    Route::resource('/messages', 'MessageController');
 });

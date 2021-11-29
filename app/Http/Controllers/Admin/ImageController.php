@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ImageController extends Controller
 {
@@ -14,7 +16,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        //
+        $images = Image::all();
+        return view('admin.images.index', compact('images'));
     }
 
     /**
@@ -24,7 +27,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.images.create');
     }
 
     /**
@@ -35,7 +38,12 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $image = new Image();
+        $image->fill($data);
+        $image->user_id = Auth::id();
+        $image->save();
+        return redirect()->route('admin.home')->with('alert', 'alert-success')->with('alert-message', 'Image saved successfully');
     }
 
     /**

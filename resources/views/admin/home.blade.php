@@ -1,22 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
+<div class="container-fluid p-5">
+    <div class="row">
+        <div class="col-2 text-center">
+            <h2>Welcome back {{Auth::user()->name}}</h2>
+            <a class="btn btn-primary" href="{{route('admin.images.index')}}">Images</a>
+            <a class="btn btn-primary" href="{{route('admin.messages.index')}}">Messages</a>
+        </div>
+        <div class="col-10">
+            @if(session('alert'))
+                <div class="alert {{session('alert')}}">
+                    {{session('alert-message')}}
                 </div>
-            </div>
+            @endif
+            @yield('rightDashboard')
         </div>
     </div>
 </div>
