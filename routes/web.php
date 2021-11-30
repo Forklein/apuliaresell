@@ -14,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-Auth::routes();
+// Auth::routes(['register' => false]);
 
 
 Route::get('/', function () {
     return view('guest.welcome');
+});
+
+Route::prefix('admin')->group(function () {
+    Auth::routes(['register' => false]);
 });
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function () {

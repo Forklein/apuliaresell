@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel</title>
+        <title>{{ config('app.name')}}</title>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -12,8 +12,7 @@
                     @auth
                         <a href="{{ url('/admin') }}">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-
+                        {{-- <a href="{{ route('login') }}">Login</a> --}}
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif

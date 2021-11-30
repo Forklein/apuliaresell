@@ -2,15 +2,14 @@
 
 @section('rightDashboard')
     <h1>Add image</h1>
-    <form method="post" action="{{route('admin.images.store')}}">
+    <form method="post" action="{{route('admin.images.store')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" class="form-control" id="name" name="name" placeholder="Image name">
         </div>
         <div class="form-group">
-          <label for="image">Link</label>
-          <input type="text" class="form-control" id="image" name="image" placeholder="Image link">
+          <input type="file" id="image" name="image" placeholder="Image link">
         </div>
         <div class="form-group">
             <label for="Visibility">Visibility</label>

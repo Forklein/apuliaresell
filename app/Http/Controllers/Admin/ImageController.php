@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -42,6 +43,7 @@ class ImageController extends Controller
         $image = new Image();
         $image->fill($data);
         $image->user_id = Auth::id();
+        $image->image = Storage::put('public', $data['image']);
         $image->save();
         return redirect()->route('admin.home')->with('alert', 'alert-success')->with('alert-message', 'Image saved successfully');
     }
@@ -52,9 +54,9 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Image $image)
     {
-        //
+        return view('admin.images.show', compact('image'));
     }
 
     /**
@@ -86,8 +88,10 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Image $image)
     {
-        //
+        Storage::delete('public', $image->image);
+        $image->delete();
+        return redirect()->route('admin.home')->with('alert', 'alert-danger')->with('alert-message', 'Image delete successfully');
     }
 }
