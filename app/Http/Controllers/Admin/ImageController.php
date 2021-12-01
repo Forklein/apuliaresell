@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,8 @@ class ImageController extends Controller
      */
     public function create()
     {
-        return view('admin.images.create');
+        $categories = Category::all();
+        return view('admin.images.create', compact('categories'));
     }
 
     /**

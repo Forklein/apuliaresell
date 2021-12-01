@@ -5,7 +5,10 @@
     <a href="{{route('admin.images.create')}}">Create a new image</a>
     @foreach ($images as $image)
     <div class="image d-flex justify-content-between align-items-center">
-        <p class="m-0">{{$image->name}}</p>
+        <div class="name-category">
+            <p class="m-0">{{$image->name}}</p>
+            <span class="badge" style="background-color: {{$image->category->color}}">{{$image->category->name}}</span>
+        </div>
         <div class="action">
             <form class="d-flex" method="POST" action="{{route('admin.images.destroy', $image->id)}}">
                 @method('DELETE')
@@ -16,7 +19,11 @@
             </form>
         </div>
         <div class="image">
-            <img src="{{asset("storage/$image->image")}}" alt="{{$image->name}}" style="width: 100px; height: 100px">
+            @if(strpos($image->image, "public") !== false)
+            <img src="{{url("storage/$image->image")}}" alt="{{$image->name}}" style="width: 100px; height: 100px">
+            @else
+            <img src="{{$image->image}}" alt="{{$image->name}}" style="width: 100px; height: 100px">
+            @endif
         </div>
     </div>
     @endforeach
