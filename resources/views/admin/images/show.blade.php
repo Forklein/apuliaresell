@@ -6,7 +6,11 @@
         {{$image->name}}
     </div>
     <div class="card-body">
-        <img src="{{asset("storage/$image->image")}}" alt="{{$image->name}}" style="width: 100px; height: 100px">
+        @if(strpos($image->image, "public") !== false)
+        <img src="{{url("storage/$image->image")}}" alt="{{$image->name}}" style="width: 100px; height: 100px">
+        @else
+        <img src="{{$image->image}}" alt="{{$image->name}}" style="width: 100px; height: 100px">
+        @endif
     </div>
     <div class="card-footer d-flex">
         <div class="info">

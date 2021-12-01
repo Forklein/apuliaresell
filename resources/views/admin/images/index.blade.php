@@ -10,7 +10,7 @@
             <span class="badge" style="background-color: {{$image->category->color}}">{{$image->category->name}}</span>
         </div>
         <div class="action">
-            <form class="d-flex" method="POST" action="{{route('admin.images.destroy', $image->id)}}">
+            <form class="data" method="POST" action="{{route('admin.images.destroy', $image->id)}}">
                 @method('DELETE')
                 @csrf
                 <a href="{{route('admin.images.show', $image->id)}}" class="btn btn-primary">Show</a>
@@ -27,4 +27,16 @@
         </div>
     </div>
     @endforeach
+@endsection
+
+@section('scripts')
+<script>
+  const forms = document.querySelectorAll('.data');
+  forms.forEach((form) => {
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(window.confirm('Are you sure you want to delete this image?')) this.submit();
+    });
+  });
+</script>
 @endsection

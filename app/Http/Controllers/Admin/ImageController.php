@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -45,7 +46,9 @@ class ImageController extends Controller
         $image = new Image();
         $image->fill($data);
         $image->user_id = Auth::id();
-        $image->image = Storage::put('public', $data['image']);
+        if (Str::contains($data['image'], "tmp")) {
+            $image->image = Storage::put('public', $data['image']);
+        } else $image->image = $data['image'];
         $image->save();
         return redirect()->route('admin.home')->with('alert', 'alert-success')->with('alert-message', 'Image saved successfully');
     }
@@ -94,6 +97,6 @@ class ImageController extends Controller
     {
         Storage::delete('public', $image->image);
         $image->delete();
-        return redirect()->route('admin.home')->with('alert', 'alert-danger')->with('alert-message', 'Image delete successfully');
+        return redirect()->route('admin.images.index')->with('alert', 'alert-danger')->with('alert-message', 'Image delete successfully');
     }
 }
