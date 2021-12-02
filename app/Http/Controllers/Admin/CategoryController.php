@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Message;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class MessageController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
-        return view('admin.messages.index', compact('messages'));
+        $categories = Category::all();
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**

@@ -1,10 +1,14 @@
 @extends('admin.home')
 
 @section('rightDashboard')
-    <h1>Images</h1>
-    <a href="{{route('admin.images.create')}}">Create a new image</a>
+    <div class="header">   
+        <h2>Images</h2>
+        <a class="btn btn-success" href="{{route('admin.images.create')}}">
+            <i class="fas fa-plus-circle">&nbsp;Add Image</i>
+        </a>
+    </div>
     @foreach ($images as $image)
-    <div class="image d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center my-2 p-2 shadow">
         <div class="name-category">
             <p class="m-0">{{$image->name}}</p>
             <span class="badge" style="background-color: {{$image->category->color}}">{{$image->category->name}}</span>

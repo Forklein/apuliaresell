@@ -32,6 +32,7 @@
     </select>
   </div>
   <button type="submit" class="btn btn-primary">Add image</button>
+  <a href="{{route('admin.images.index')}}" class="btn btn-primary">Back</a>
 </form>
 @endsection
 @section('scripts')
