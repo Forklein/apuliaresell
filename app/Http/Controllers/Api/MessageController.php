@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MessageRequest;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,7 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MessageRequest $request)
     {
         $data = $request->all();
         $message = new Message();
@@ -32,7 +33,7 @@ class MessageController extends Controller
         $message->user_id = 1;
         $message->save();
         return response()->json([
-            'message' => 'Message send correctly!'
+            'message' => 'Message send correctly!',
         ], 200);
     }
 
