@@ -1,6 +1,12 @@
 @extends('admin.home')
 
 @section('rightDashboard')
+<div class="header">   
+  <h2>Categirues</h2>
+  <a class="btn btn-success" href="{{route('admin.categories.create')}}">
+      <i class="fas fa-plus-circle">&nbsp;Add Category</i>
+  </a>
+</div>
 <table class="table shadow">
     <thead>
       <tr>

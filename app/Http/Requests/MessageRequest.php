@@ -25,12 +25,25 @@ class MessageRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
-                'required',
-            ],
-            // 'surname' => 'required',
-            // 'email' => 'required',
-            // 'description' => 'required',
+            'name' => 'required|regex:/^[a-zA-Z]+$/u|min:3',
+            'surname' => 'required|regex:/^[a-zA-Z]+$/u|min:3',
+            'email' => 'required|email',
+            'description' => 'required',
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            // 'name.string'     => 'The name required string value',
+            // 'surname.required'  => 'An address is required to add this cafe.',
+            // 'email.required'     => 'A city is required to add this cafe.',
+            // 'description.required'    => 'A state is required to add this cafe.',
         ];
     }
 }

@@ -39,9 +39,6 @@ class ValidationMessage implements Rule
      */
     public function message()
     {
-        // return response()->json([
-        //     'Message' => 'Error'
-        // ]);
         return 'error';
     }
 }
