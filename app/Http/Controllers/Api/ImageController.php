@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Image;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::all();
+        $images = Image::with('category')->get();
+        // $categories = Category::with('images')->where('name', 'LIKE', '%Jordan%')->get();
         return response()->json([
             'Message' => 'Apuliaresell Successfull Api',
             'images' => $images
