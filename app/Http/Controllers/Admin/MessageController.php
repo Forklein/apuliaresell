@@ -80,8 +80,9 @@ class MessageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Message $message)
     {
-        //
+        $message->delete();
+        return redirect()->route('admin.messages.index')->with('alert', 'alert-danger')->with('alert-message', 'Message delete successfully');
     }
 }

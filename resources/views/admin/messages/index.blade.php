@@ -22,6 +22,11 @@
                 <td>{{$message->get_date($message->created_at)}}</td>
                 <td>
                     <a class="btn btn-primary" href="{{route('admin.messages.show', $message->id)}}">Show</a>
+                    <form class="data" method="POST" action="{{route('admin.messages.destroy', $message->id)}}">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
                 </td>
             </tr>
             @endforeach
