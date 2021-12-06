@@ -8,6 +8,10 @@
                 <h2 class="text-center">Welcome back {{Auth::user()->name}}</h2>
             </div>
             <div class="py-2">
+                <i class="fas fa-home fa-2x mr-2"></i>
+                <a class="h4" href="{{route('admin.home')}}">Home</a>
+            </div>
+            <div class="py-2">
                 <i class="fas fa-images fa-2x mr-2"></i>
                 <a class="h4" href="{{route('admin.images.index')}}">Images</a>
             </div>

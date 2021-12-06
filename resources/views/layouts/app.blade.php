@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}@yield('title')</title>
+    @yield('cdns')
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -60,7 +61,7 @@
         </div>
     </nav>
 
-    <main style="height: calc(100% - 55px)">
+    <main style="height: calc(100% - 56px)">
         @yield('content')
     </main>
     @yield('scripts')

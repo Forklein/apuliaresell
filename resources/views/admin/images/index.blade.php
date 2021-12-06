@@ -1,5 +1,6 @@
 @extends('admin.home')
 
+@section('title', '-Images')
 @section('rightDashboard')
     <div class="header">   
         <h2>Images</h2>

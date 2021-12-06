@@ -1,15 +1,19 @@
 <template>
   <div class="card">
     <img
-      :src="baseUri + `storage/${data.image}`"
+      :src="
+        data.image.includes('public')
+          ? baseUri + `storage/${data.image}`
+          : data.image
+      "
       class="card-img-top"
-      alt="..."
+      :alt="data.name"
     />
     <div class="card-body">
       <h5 class="card-title">{{ data.name }}</h5>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Last updated 3 mins ago</small>
+      <small class="text-muted">{{ data.created_at }}</small>
     </div>
   </div>
 </template>

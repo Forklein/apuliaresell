@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('/images', 'ImageController');
     Route::resource('/messages', 'MessageController');
     Route::resource('/categories', 'CategoryController');

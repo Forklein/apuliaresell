@@ -1,5 +1,6 @@
 @extends('admin.home')
 
+@section('title', '-Messages')
 @section('rightDashboard')
     <table class="table shadow">
         <thead>
