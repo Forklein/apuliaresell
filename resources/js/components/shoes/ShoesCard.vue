@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card pointer">
     <img
       :src="
         data.image.includes('public')
@@ -9,7 +9,7 @@
       class="card-img-top"
       :alt="data.name"
     />
-    <div class="card-body">
+    <div class="card-body" style="height: 100px">
       <h5 class="card-title">{{ data.name }}</h5>
     </div>
   </div>
@@ -27,5 +27,8 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.pointer {
+  cursor: pointer;
+}
 </style>

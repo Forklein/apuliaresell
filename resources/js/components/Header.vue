@@ -2,7 +2,11 @@
   <header>
     <nav class="custom-navbar navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a class="navbar-brand text-white" href="/">Apuliaresell</a>
+        <a class="navbar-brand text-white" href="/">
+          <h2 class="title mb-5 text-center" style="font-size: 45px">
+            Apuliaresell
+          </h2>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -38,6 +42,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../sass/variables";
+
 .custom-navbar {
   background: rgb(109, 129, 253);
   background: linear-gradient(
@@ -45,5 +51,10 @@ export default {
     rgba(109, 129, 253, 1) 0%,
     rgba(185, 111, 253, 1) 70%
   );
+  .title {
+    font-family: "Lobster", cursive;
+    text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.5);
+    color: $text-logo;
+  }
 }
 </style>

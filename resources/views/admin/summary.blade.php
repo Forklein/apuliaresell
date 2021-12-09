@@ -5,7 +5,7 @@
     <div class="row justify-content-between">
         <div class="col-8">
             <h2>Admin Panel</h2>
-            <p>Select your choice</p>
+            <strong>Select your choice or go to <a href={{route('guest.welcome')}} style="color: #fff !important">Website</a></st>
         </div>
         <div class="col-2">
             <div class="navbar-collapse navbar-light" id="navbarSupportedContent">

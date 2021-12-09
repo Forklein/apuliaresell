@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-6 mx-auto shadow">
+      <div class="col-4 mx-auto card">
         <h3>Contact us</h3>
         <p>Fill in the data below</p>
         <div v-if="success" class="alert alert-success" role="alert">

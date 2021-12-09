@@ -1,23 +1,44 @@
 <template>
   <main>
     <section id="jumbotron">
-      <h2 class="title mb-5 text-center" style="font-size: 65px">
-        Apuliaresell
-      </h2>
       <div class="container d-flex">
         <div class="col-7 text-white">
-          <p class="h3">Apuliaresell is a reselling page of Sneakers</p>
+          <!-- <p class="h3">Apuliaresell is a reselling page of Sneakers</p> -->
         </div>
-        <div class="col-5">
-          <img class="img-fluid" src="../images/imac_banner.png" alt="imac" />
+        <div class="col-5 test">
+          <img class="img-fluid" src="images/imac_banner.png" alt="imac" />
         </div>
       </div>
     </section>
-    <section id="shoes">
-      <div class="container p-3">
-        <carousel per-page="1" mouse-drag="true" autoplay="true" loop="true">
+    <section id="about" class="mt-3">
+      <div class="container">
+        <h2 class="text-center text-white my-3">About</h2>
+        <div class="row justify-content-around text-center">
+          <div v-for="(data, index) in about" :key="index" class="col-3">
+            <div class="card">
+              <div class="card-header">
+                <strong>{{ data.name }}</strong>
+                <p class="my-3" v-html="data.icon"></p>
+              </div>
+              <div class="card-body">
+                <p>{{ data.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="shoes" class="mt-3">
+      <div class="container-fluid">
+        <h2 class="text-center text-white my-3">Our products</h2>
+        <carousel
+          :per-page="4"
+          :mouse-drag="true"
+          :autoplay="true"
+          :loop="true"
+        >
           <slide v-for="image in images" :key="image.id">
-            <ShoesCard class="col-6 mx-auto" :data="image" />
+            <ShoesCard class="mx-2" :data="image" />
           </slide>
         </carousel>
       </div>
@@ -35,6 +56,7 @@ import { Carousel, Slide } from "vue-carousel";
 import ShoesCard from "./shoes/ShoesCard";
 import Form from "./utilities/Form";
 import Loader from "./utilities/Loader";
+import about from "./data/about.js";
 
 export default {
   name: "Content",
@@ -50,6 +72,7 @@ export default {
       images: [],
       baseUri: "http://127.0.0.1:8000/",
       isLoading: false,
+      about,
     };
   },
   async created() {
@@ -67,12 +90,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  font-family: "Lobster", cursive;
-  text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.5);
-  color: rgba(168, 158, 32, 0.8);
-}
-
 #jumbotron {
   background: rgb(109, 129, 253);
   background: linear-gradient(
@@ -82,10 +99,5 @@ export default {
   );
   background-attachment: fixed;
   background-position: center;
-  .title {
-    font-family: "Lobster", cursive;
-    text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.5);
-    color: rgba(168, 158, 32, 0.8);
-  }
 }
 </style>

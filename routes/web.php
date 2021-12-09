@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('guest.welcome');
-});
+})->name('guest.welcome');
 
 Route::prefix('admin')->group(function () {
     Auth::routes(['register' => false]);
