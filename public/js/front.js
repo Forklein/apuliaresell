@@ -2155,9 +2155,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ShoesCard",
   props: ["data"],
@@ -39583,13 +39580,13 @@ var staticRenderFns = [
       ),
       _vm._v(" "),
       _c("div", { staticClass: "container d-flex" }, [
-        _c("div", { staticClass: "col-8 text-white" }, [
+        _c("div", { staticClass: "col-7 text-white" }, [
           _c("p", { staticClass: "h3" }, [
             _vm._v("Apuliaresell is a reselling page of Sneakers"),
           ]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-4" }, [
+        _c("div", { staticClass: "col-5" }, [
           _c("img", {
             staticClass: "img-fluid",
             attrs: { src: __webpack_require__(/*! ../images/imac_banner.png */ "./resources/js/images/imac_banner.png"), alt: "imac" },
@@ -39776,12 +39773,6 @@ var render = function () {
     _vm._v(" "),
     _c("div", { staticClass: "card-body" }, [
       _c("h5", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.data.name))]),
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "card-footer" }, [
-      _c("small", { staticClass: "text-muted" }, [
-        _vm._v(_vm._s(_vm.data.created_at)),
-      ]),
     ]),
   ])
 }

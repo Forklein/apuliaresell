@@ -12,9 +12,6 @@
     <div class="card-body">
       <h5 class="card-title">{{ data.name }}</h5>
     </div>
-    <div class="card-footer">
-      <small class="text-muted">{{ data.created_at }}</small>
-    </div>
   </div>
 </template>
 

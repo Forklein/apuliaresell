@@ -5,10 +5,10 @@
         Apuliaresell
       </h2>
       <div class="container d-flex">
-        <div class="col-8 text-white">
+        <div class="col-7 text-white">
           <p class="h3">Apuliaresell is a reselling page of Sneakers</p>
         </div>
-        <div class="col-4">
+        <div class="col-5">
           <img class="img-fluid" src="../images/imac_banner.png" alt="imac" />
         </div>
       </div>
