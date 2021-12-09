@@ -1,25 +1,30 @@
 <template>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">Apuliaresell</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand text-white" href="/">Apuliaresell</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link navbar-toggler" href="#">Home</a>
+            <a class="nav-link navbar-toggler" href="#">Features</a>
+            <a class="nav-link navbar-toggler" href="#">Pricing</a>
+          </div>
+        </div>
         <div class="navbar-nav">
-          <a class="nav-link navbar-toggler" href="#"
-            >Home <span class="sr-only">(current)</span></a
-          >
-          <a class="nav-link navbar-toggler" href="#">Features</a>
-          <a class="nav-link navbar-toggler" href="#">Pricing</a>
+          <a class="nav-link text-white" href="#">Home</a>
+          <a class="nav-link text-white" href="#">Features</a>
+          <a class="nav-link text-white" href="#">Pricing</a>
         </div>
       </div>
     </nav>
@@ -33,4 +38,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.custom-navbar {
+  background: rgb(109, 129, 253);
+  background: linear-gradient(
+    90deg,
+    rgba(109, 129, 253, 1) 0%,
+    rgba(185, 111, 253, 1) 70%
+  );
+}
 </style>

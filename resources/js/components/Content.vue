@@ -1,13 +1,21 @@
 <template>
   <main>
     <section id="jumbotron">
-      <article class="wrapper">
-        <h2 class="title" style="font-size: 150px">Apuliaresell</h2>
-      </article>
+      <h2 class="title mb-5 text-center" style="font-size: 65px">
+        Apuliaresell
+      </h2>
+      <div class="container d-flex">
+        <div class="col-8 text-white">
+          <p class="h3">Apuliaresell is a reselling page of Sneakers</p>
+        </div>
+        <div class="col-4">
+          <img class="img-fluid" src="../images/imac_banner.png" alt="imac" />
+        </div>
+      </div>
     </section>
     <section id="shoes">
       <div class="container p-3">
-        <carousel :per-page="1" :mouse-drag="false">
+        <carousel per-page="1" mouse-drag="true" autoplay="true" loop="true">
           <slide v-for="image in images" :key="image.id">
             <ShoesCard class="col-6 mx-auto" :data="image" />
           </slide>
@@ -65,36 +73,19 @@ export default {
   color: rgba(168, 158, 32, 0.8);
 }
 
-.wrapper {
-  animation: scroll 70s linear infinite;
-  background: url("https://i.pinimg.com/originals/2d/21/3d/2d213d36f66c318754bd4b78ab9361f1.jpg"),
-    #111111;
-  color: #eee;
-  height: 100vh;
-  min-width: 360px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
-}
-
-@keyframes scroll {
-  100% {
-    background-position: 0px -3000px;
-  }
-}
-
-@media (prefers-reduced-motion) {
-  .wrapper {
-    animation: scroll 200s linear infinite;
-  }
-}
-
-@media (min-width: 670px) {
+#jumbotron {
+  background: rgb(109, 129, 253);
+  background: linear-gradient(
+    90deg,
+    rgba(109, 129, 253, 1) 0%,
+    rgba(185, 111, 253, 1) 70%
+  );
+  background-attachment: fixed;
+  background-position: center;
   .title {
-    font-size: 5rem;
+    font-family: "Lobster", cursive;
+    text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.5);
+    color: rgba(168, 158, 32, 0.8);
   }
 }
 </style>
