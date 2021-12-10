@@ -14,8 +14,12 @@
       <div class="container">
         <h2 class="text-center text-white my-3">About</h2>
         <div class="row justify-content-around text-center">
-          <div v-for="(data, index) in about" :key="index" class="col-3">
-            <div class="card">
+          <div
+            v-for="(data, index) in about"
+            :key="index"
+            class="col-sm-12 col-md-3 my-sm-3"
+          >
+            <div class="card h-100">
               <div class="card-header">
                 <strong>{{ data.name }}</strong>
                 <p class="my-3" v-html="data.icon"></p>

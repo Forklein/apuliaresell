@@ -2020,6 +2020,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -39609,22 +39613,26 @@ var render = function () {
             "div",
             { staticClass: "row justify-content-around text-center" },
             _vm._l(_vm.about, function (data, index) {
-              return _c("div", { key: index, staticClass: "col-3" }, [
-                _c("div", { staticClass: "card" }, [
-                  _c("div", { staticClass: "card-header" }, [
-                    _c("strong", [_vm._v(_vm._s(data.name))]),
+              return _c(
+                "div",
+                { key: index, staticClass: "col-sm-12 col-md-3 my-sm-3" },
+                [
+                  _c("div", { staticClass: "card h-100" }, [
+                    _c("div", { staticClass: "card-header" }, [
+                      _c("strong", [_vm._v(_vm._s(data.name))]),
+                      _vm._v(" "),
+                      _c("p", {
+                        staticClass: "my-3",
+                        domProps: { innerHTML: _vm._s(data.icon) },
+                      }),
+                    ]),
                     _vm._v(" "),
-                    _c("p", {
-                      staticClass: "my-3",
-                      domProps: { innerHTML: _vm._s(data.icon) },
-                    }),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", [_vm._v(_vm._s(data.description))]),
+                    ]),
                   ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card-body" }, [
-                    _c("p", [_vm._v(_vm._s(data.description))]),
-                  ]),
-                ]),
-              ])
+                ]
+              )
             }),
             0
           ),
