@@ -2233,7 +2233,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2250,15 +2249,15 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     fillData: function fillData() {
       this.datacollection = {
-        labels: [this.getRandomInt(), this.getRandomInt()],
+        labels: [0, 100],
         datasets: [{
-          label: "Data One",
-          backgroundColor: "#f87979",
-          data: [this.getRandomInt(), this.getRandomInt()]
+          label: "Clients",
+          backgroundColor: "#6d81fd",
+          data: [0, 100]
         }, {
-          label: "Data One",
-          backgroundColor: "#f87979",
-          data: [this.getRandomInt(), this.getRandomInt()]
+          label: "Feedback",
+          backgroundColor: "#9d75fd",
+          data: [0, 90]
         }]
       };
     },
@@ -21573,7 +21572,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".loader[data-v-38305923] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n}\n.lds-ring[data-v-38305923] {\n  display: inline-block;\n  position: relative;\n  width: 80px;\n  height: 80px;\n}\n.lds-ring div[data-v-38305923] {\n  box-sizing: border-box;\n  display: block;\n  position: absolute;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border: 8px solid #dfc;\n  border-radius: 50%;\n  -webkit-animation: lds-ring-data-v-38305923 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n          animation: lds-ring-data-v-38305923 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n  border-color: #dfc transparent transparent transparent;\n}\n.lds-ring div[data-v-38305923]:nth-child(1) {\n  -webkit-animation-delay: -0.45s;\n          animation-delay: -0.45s;\n}\n.lds-ring div[data-v-38305923]:nth-child(2) {\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n}\n.lds-ring div[data-v-38305923]:nth-child(3) {\n  -webkit-animation-delay: -0.15s;\n          animation-delay: -0.15s;\n}\n@-webkit-keyframes lds-ring-data-v-38305923 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes lds-ring-data-v-38305923 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}", ""]);
+exports.push([module.i, ".loader[data-v-38305923] {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n  height: 100vh;\n}\n.lds-ring[data-v-38305923] {\n  display: inline-block;\n  position: relative;\n  width: 80px;\n  height: 80px;\n}\n.lds-ring div[data-v-38305923] {\n  box-sizing: border-box;\n  display: block;\n  position: absolute;\n  width: 64px;\n  height: 64px;\n  margin: 8px;\n  border: 8px solid #9d75fd;\n  border-radius: 50%;\n  -webkit-animation: lds-ring-data-v-38305923 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n          animation: lds-ring-data-v-38305923 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;\n  border-color: #9d75fd transparent transparent transparent;\n}\n.lds-ring div[data-v-38305923]:nth-child(1) {\n  -webkit-animation-delay: -0.45s;\n          animation-delay: -0.45s;\n}\n.lds-ring div[data-v-38305923]:nth-child(2) {\n  -webkit-animation-delay: -0.3s;\n          animation-delay: -0.3s;\n}\n.lds-ring div[data-v-38305923]:nth-child(3) {\n  -webkit-animation-delay: -0.15s;\n          animation-delay: -0.15s;\n}\n@-webkit-keyframes lds-ring-data-v-38305923 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}\n@keyframes lds-ring-data-v-38305923 {\n0% {\n    transform: rotate(0deg);\n}\n100% {\n    transform: rotate(360deg);\n}\n}", ""]);
 
 // exports
 
@@ -71292,21 +71291,7 @@ var render = function () {
   return _c(
     "div",
     { staticClass: "small" },
-    [
-      _c("line-chart", { attrs: { "chart-data": _vm.datacollection } }),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          on: {
-            click: function ($event) {
-              return _vm.fillData()
-            },
-          },
-        },
-        [_vm._v("Randomize")]
-      ),
-    ],
+    [_c("line-chart", { attrs: { "chart-data": _vm.datacollection } })],
     1
   )
 }
