@@ -1,5 +1,6 @@
 <template>
   <main>
+    <Loader v-if="isLoading" />
     <section id="jumbotron">
       <div class="container d-flex">
         <div class="col-7 text-white">
@@ -32,6 +33,9 @@
         </div>
       </div>
     </section>
+    <section id="charts" class="text-white">
+      <Chart />
+    </section>
     <section id="shoes" class="mt-3">
       <div class="container-fluid">
         <h2 class="text-center text-white my-3">Our products</h2>
@@ -50,16 +54,19 @@
     <section id="form">
       <Form />
     </section>
-    <Loader v-if="isLoading" />
   </main>
 </template>
 
 <script>
 import { Carousel, Slide } from "vue-carousel";
 
+//components
 import ShoesCard from "./shoes/ShoesCard";
 import Form from "./utilities/Form";
+import Chart from "./utilities/Chart";
+//utilities
 import Loader from "./utilities/Loader";
+//data
 import about from "./data/about.js";
 
 export default {
@@ -70,6 +77,7 @@ export default {
     ShoesCard,
     Form,
     Loader,
+    Chart,
   },
   data() {
     return {

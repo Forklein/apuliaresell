@@ -6,6 +6,7 @@ window.axios = require('axios');
 
 import VueCarousel from 'vue-carousel';
 import App from './components/App';
+
 Vue.use(VueCarousel);
 
 const app = new Vue({
