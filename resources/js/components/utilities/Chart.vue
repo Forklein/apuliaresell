@@ -13,10 +13,10 @@ export default {
   },
   data() {
     return {
-      datacollection: null,
+      datacollection: "",
     };
   },
-  mounted() {
+  created() {
     this.fillData();
   },
   methods: {

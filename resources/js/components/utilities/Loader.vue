@@ -24,6 +24,7 @@ export default {
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   height: 100vh;
+  z-index: 999;
 }
 .lds-ring {
   display: inline-block;

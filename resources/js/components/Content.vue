@@ -4,11 +4,34 @@
     <section id="jumbotron">
       <div class="container d-flex">
         <div class="col-7 text-white">
-          <!-- <p class="h3">Apuliaresell is a reselling page of Sneakers</p> -->
+          <div class="description py-5">
+            <p class="h3" data-aos="zoom-in" data-aos-delay="500">
+              Apuliaresell is a reselling page of Sneakers
+            </p>
+            <button class="btn btn-primary">Learn more</button>
+          </div>
         </div>
-        <div class="col-5 test">
+        <div class="col-5">
           <img class="img-fluid" src="images/imac_banner.png" alt="imac" />
         </div>
+      </div>
+    </section>
+    <section id="shoes" class="my-3">
+      <div class="container-fluid p-5">
+        <h2 class="text-center text-white my-3">Our products</h2>
+        <carousel
+          :navigationEnabled="true"
+          navigationPrevLabel="<i class='fas text-white fa-arrow-circle-left fa-2x'></i>"
+          navigationNextLabel="<i class='fas text-white fa-arrow-circle-right fa-2x'></i>"
+          :autoplay="true"
+          :per-page="5"
+          :mouse-drag="true"
+          :loop="true"
+        >
+          <slide v-for="image in images" :key="image.id">
+            <ShoesCard :data="image" />
+          </slide>
+        </carousel>
       </div>
     </section>
     <section id="about" class="mt-3">
@@ -22,7 +45,6 @@
           >
             <div class="card h-100">
               <div class="card-header">
-                <strong>{{ data.name }}</strong>
                 <p class="my-3" v-html="data.icon"></p>
               </div>
               <div class="card-body">
@@ -36,22 +58,7 @@
     <section id="charts" class="text-white">
       <Chart />
     </section>
-    <section id="shoes" class="mt-3">
-      <div class="container-fluid">
-        <h2 class="text-center text-white my-3">Our products</h2>
-        <carousel
-          :per-page="4"
-          :mouse-drag="true"
-          :autoplay="true"
-          :loop="true"
-        >
-          <slide v-for="image in images" :key="image.id">
-            <ShoesCard class="mx-2" :data="image" />
-          </slide>
-        </carousel>
-      </div>
-    </section>
-    <section id="form">
+    <section id="form" class="p-3">
       <Form />
     </section>
   </main>
@@ -102,14 +109,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#jumbotron {
-  background: rgb(109, 129, 253);
-  background: linear-gradient(
-    90deg,
-    rgba(109, 129, 253, 1) 0%,
-    rgba(185, 111, 253, 1) 70%
-  );
-  background-attachment: fixed;
-  background-position: center;
+#shoes {
+  background-color: rgba(19, 20, 29, 0.5);
+}
+#form {
+  background-color: rgba(19, 20, 29, 0.5);
+}
+#slide {
+  &:hover {
+    transition: transform 0.5s linear;
+    transform: translateY(-50px);
+    border: 2px solid #9d75fd;
+  }
 }
 </style>

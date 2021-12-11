@@ -1,5 +1,5 @@
 <template>
-  <div class="card pointer">
+  <div class="card pointer mx-2 bg-light text-center shadow">
     <img
       :src="
         data.image.includes('public')
@@ -10,7 +10,7 @@
       :alt="data.name"
     />
     <div class="card-body" style="height: 100px">
-      <h5 class="card-title">{{ data.name }}</h5>
+      <strong class="card-title">{{ data.name }}</strong>
     </div>
   </div>
 </template>
