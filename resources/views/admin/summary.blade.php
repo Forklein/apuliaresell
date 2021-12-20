@@ -2,7 +2,7 @@
 
 @section('title', '-Home')
 @section('rightDashboard')
-    <div class="row justify-content-between">
+    <div class="row justify-content-between p-5">
         <div class="col-8">
             <h2>Admin Panel</h2>
             <strong>Select your choice or go to <a href={{route('guest.welcome')}} style="color: #fff !important">Website</a></st>

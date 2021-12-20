@@ -24,7 +24,7 @@
                 <a class="h4" href="{{route('admin.categories.index')}}">Categories</a>
             </div>
         </div>
-        <div class="col-10 p-3 bg-info">
+        <div class="col-10 p-3 bg-secondary">
             @if(session('alert'))
                 <div class="alert {{session('alert')}}">
                     {{session('alert-message')}}
