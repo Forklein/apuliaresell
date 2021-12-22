@@ -7,9 +7,9 @@
             <i class="fas fa-plus-circle">&nbsp;Add Image</i>
         </a>
     </div>
-    @foreach ($images as $image)
     <div class="row justify-content-between align-items-center my-2 p-2 shadow text-white">
-        <div class="col name-category">
+        @forelse ($images as $image)
+        <div class="col-8 name-category">
             <p class="m-0 h5">Name: {{$image->name}}</p>
             <span>Category: </span><span class="badge text-info" style="background-color: {{$image->category->color ?? ''}}">{{$image->category->name ?? 'No Category'}}</span>
         </div>
@@ -29,8 +29,10 @@
             <img class="img-fluid" src="{{$image->image}}" alt="{{$image->name}}">
             @endif
         </div>
+        @empty
+        <h2>Please add an image</h2>
+        @endforelse
     </div>
-    @endforeach
 @endsection
 
 @section('scripts')

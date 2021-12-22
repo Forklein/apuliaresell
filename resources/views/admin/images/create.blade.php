@@ -12,9 +12,9 @@
     <label>Select Mode</label>
     <select class="form-control" id="mode">
       <option value="file">File</option>
-      <option value="text">Link</option>
+      <option value="link">Link</option>
     <input class="mt-2" type="file" id="image-file" name="image" placeholder="Image link">
-    <input class="mt-2 d-none form-control" type="text" id="image-text" name="image" placeholder="Image link">
+    <input class="mt-2 d-none form-control" type="text" id="image-link" name="image" placeholder="Image link">
   </div>
   <div class="form-group">
     <label for="category">Category</label>
@@ -39,14 +39,14 @@
 <script>
   const select = document.getElementById('mode');
   const file = document.getElementById('image-file');
-  const text = document.getElementById('image-text');
-  mode.addEventListener('change', function(){
-    if(this.value == 'text'){
+  const link = document.getElementById('image-link');
+  select.addEventListener('change', function(){
+    if(this.value == 'link'){
       file.classList.add('d-none');
-      text.classList.add('d-block')
+      link.classList.add('d-block')
     }else{
       file.classList.remove('d-none')
-      text.classList.remove('d-block')
+      link.classList.remove('d-block')
     }
   })
 </script>

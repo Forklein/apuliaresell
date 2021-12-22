@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-            @foreach ($messages as $message)
+            @forelse ($messages as $message)
             <tr>
                 <td>{{$loop->iteration}}</td>
                 <td>{{$message->name}}</td>
@@ -29,8 +29,10 @@
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
                 </td>
+                @empty
+                <td colspan="6" class="text-center">No messages</td>
             </tr>
-            @endforeach
+            @endforelse
         </tbody>
     </table>
 @endsection

@@ -16,7 +16,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $images = Image::with('category')->get();
+        $images = Image::with('category')->where('visibility', 1)->get();
         // $categories = Category::with('images')->where('name', 'LIKE', '%Jordan%')->get();
         return response()->json([
             'Message' => 'Apuliaresell Successfull Api',
