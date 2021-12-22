@@ -83,9 +83,15 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Image $image)
     {
-        //
+        $data = $request->all();
+        Storage::delete('public', $image->image);
+        if (Str::contains($data['image'], "tmp")) {
+            $image->image = Storage::put('public', $data['image']);
+        } else $image->image = $data['image'];
+        $image->update($data);
+        return redirect()->route('admin.images.index')->with('alert', 'alert-success')->with('alert-message', 'Image updated successfully');
     }
 
     /**
