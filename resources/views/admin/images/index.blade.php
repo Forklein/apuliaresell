@@ -7,7 +7,7 @@
             <i class="fas fa-plus-circle">&nbsp;Add Image</i>
         </a>
     </div>
-    <div class="row justify-content-between align-items-center my-2 p-2 shadow text-white">
+    <div class="row justify-content-between align-items-center my-2 shadow text-white">
         @forelse ($images as $image)
         <div class="col-8 name-category">
             <p class="m-0 h5">Name: {{$image->name}}</p>
@@ -22,11 +22,11 @@
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </div>
-        <div class="col-2 image">
+        <div class="col-2 image text-center p-2">
             @if(strpos($image->image, "public") !== false)
-            <img class="img-fluid" src="{{url("storage/$image->image")}}" alt="{{$image->name}}">
+            <img src="{{url("storage/$image->image")}}" alt="{{$image->name}}" style="width: 50%; height: 50%">
             @else
-            <img class="img-fluid" src="{{$image->image}}" alt="{{$image->name}}">
+            <img src="{{$image->image}}" alt="{{$image->name}}" style="width: 50%; height: 50%">
             @endif
         </div>
         @empty

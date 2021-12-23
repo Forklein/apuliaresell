@@ -19,6 +19,9 @@
     <section id="shoes" class="my-3">
       <div class="container-fluid p-5">
         <h2 class="text-center text-white my-3">Our products</h2>
+        <h2 class="text-center text-white my-3" v-if="errorApi">
+          Error please reload the page
+        </h2>
         <carousel
           :navigationEnabled="true"
           navigationPrevLabel="<i class='fas text-white fa-arrow-circle-left fa-2x'></i>"
@@ -92,6 +95,7 @@ export default {
       baseUri: "http://127.0.0.1:8000/",
       isLoading: false,
       about,
+      errorApi: false,
     };
   },
   async created() {
@@ -101,6 +105,7 @@ export default {
       this.images = images.data.images;
     } catch (error) {
       console.log(error);
+      this.errorApi = true;
     } finally {
       setTimeout(() => (this.isLoading = false), 1500);
     }

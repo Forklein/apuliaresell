@@ -14,8 +14,8 @@
     <select class="form-control" id="mode">
       <option  @if(strpos($image->image, "public") !== false) selected @endif value="file">File</option>
       <option @if(strpos($image->image, "public") === false) selected @endif value="link">Link</option>
-    <input class="mt-2 {{(strpos($image->image, "public") !== false) ? '' : 'd-none' }}" value="{{($image->image) ?? ''}}" type="file" id="image-file" name="image" placeholder="Image link">
-    <input class="mt-2 {{(strpos($image->image, "public") === false) ? '' : 'd-none' }} form-control" value="{{($image->image) ?? ''}}" type="text" id="image-link" name="image" placeholder="Image link">
+    <input class="mt-2 {{(strpos($image->image, "public") !== false) ? '' : 'd-none' }}" type="file" id="image-file" name="image">
+    <input class="mt-2 {{(strpos($image->image, "public") === false) ? '' : 'd-none' }}form-control" value="{{($image->image) ?? ''}}" type="text" id="image-link" name="image" placeholder="Image link">
   </div>
   <div class="form-group">
     <label for="category">Category</label>
@@ -45,10 +45,10 @@
     if(this.value == 'link'){
       file.classList.add('d-none');
       link.classList.add('d-block');
+      link.value = '';
     }else{
       file.classList.remove('d-none');
-      link.value = '';
-      link.classList.add('d-none');
+      link.classList.remove('d-block');
     }
   })
 </script>

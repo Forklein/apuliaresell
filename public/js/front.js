@@ -2076,6 +2076,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
  //components
 
 
@@ -2100,7 +2103,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       images: [],
       baseUri: "http://127.0.0.1:8000/",
       isLoading: false,
-      about: _data_about_js__WEBPACK_IMPORTED_MODULE_6__["default"]
+      about: _data_about_js__WEBPACK_IMPORTED_MODULE_6__["default"],
+      errorApi: false
     };
   },
   created: function created() {
@@ -2120,27 +2124,28 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             case 4:
               images = _context.sent;
               _this.images = images.data.images;
-              _context.next = 11;
+              _context.next = 12;
               break;
 
             case 8:
               _context.prev = 8;
               _context.t0 = _context["catch"](0);
               console.log(_context.t0);
+              _this.errorApi = true;
 
-            case 11:
-              _context.prev = 11;
+            case 12:
+              _context.prev = 12;
               setTimeout(function () {
                 return _this.isLoading = false;
               }, 1500);
-              return _context.finish(11);
+              return _context.finish(12);
 
-            case 14:
+            case 15:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 8, 11, 14]]);
+      }, _callee, null, [[0, 8, 12, 15]]);
     }))();
   }
 });
@@ -77837,6 +77842,12 @@ var render = function () {
             _c("h2", { staticClass: "text-center text-white my-3" }, [
               _vm._v("Our products"),
             ]),
+            _vm._v(" "),
+            _vm.errorApi
+              ? _c("h2", { staticClass: "text-center text-white my-3" }, [
+                  _vm._v("\n        Error please reload the page\n      "),
+                ])
+              : _vm._e(),
             _vm._v(" "),
             _c(
               "carousel",

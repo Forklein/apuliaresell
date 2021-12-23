@@ -86,7 +86,7 @@ class ImageController extends Controller
     public function update(Request $request, Image $image)
     {
         $data = $request->all();
-        Storage::delete('public', $image->image);
+        // if (array_key_exists('image', $data)) Storage::delete('public', $image->image);
         if (Str::contains($data['image'], "tmp")) {
             $image->image = Storage::put('public', $data['image']);
         } else $image->image = $data['image'];
