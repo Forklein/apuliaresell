@@ -91432,7 +91432,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\apuliaresell\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\sarad\Desktop\Peppe\apuliaresell\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
