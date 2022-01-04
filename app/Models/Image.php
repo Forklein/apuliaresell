@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
 
 class Image extends Model
 {
@@ -24,5 +26,10 @@ class Image extends Model
     public function get_date($column)
     {
         return Carbon::create($column)->format('d-m-Y');
+    }
+
+    public function contains($string, $search)
+    {
+        return Str::contains($string, $search);
     }
 }

@@ -7,13 +7,13 @@
             <i class="fas fa-plus-circle">&nbsp;Add Image</i>
         </a>
     </div>
-    <div class="row justify-content-between align-items-center my-2 shadow text-white">
+    <div class="row align-items-center my-2 shadow text-white">
         @forelse ($images as $image)
-        <div class="col-8 name-category">
+        <div class="col-6 name-category">
             <p class="m-0 h5">Name: {{$image->name}}</p>
             <span>Category: </span><span class="badge text-info" style="background-color: {{$image->category->color ?? ''}}">{{$image->category->name ?? 'No Category'}}</span>
         </div>
-        <div class="col-2 action">
+        <div class="col-4 action">
             <form class="data" method="POST" action="{{route('admin.images.destroy', $image->id)}}">
                 @method('DELETE')
                 @csrf
