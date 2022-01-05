@@ -12,8 +12,8 @@
   <div class="form-group">
     <label>Select Mode</label>
     <select class="form-control" id="mode">
-      <option  @if(strpos($image->image, "public") !== false) selected @endif value="file">File</option>
-      <option @if(strpos($image->image, "public") === false) selected @endif value="link">Link</option>
+      <option {{$image->contains($image->image, 'public') ? 'selected' : ''}} value="file">File</option>
+      <option {{$image->contains($image->image, 'public') ? '' : 'selected'}} value="link">Link</option>
     </select>
     <input class="mt-2 {{$image->contains($image->image, 'public') ? '' : 'd-none' }}" type="file" id="image-file" name="image">
     <input class="mt-2 {{$image->contains($image->image, 'public') ? 'd-none' : '' }} form-control" value="{{($image->image) ?? ''}}" type="text" id="image-link" name="image" placeholder="Image link">
