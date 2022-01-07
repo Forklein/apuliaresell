@@ -58,7 +58,7 @@
         </div>
       </div>
     </section>
-    <section id="charts" class="text-white">
+    <section id="charts">
       <Chart />
     </section>
     <section id="form" class="p-3">

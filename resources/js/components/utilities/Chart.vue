@@ -1,11 +1,11 @@
 <template>
-  <div class="small">
+  <div>
     <!-- <line-chart :chart-data="datacollection"></line-chart> -->
-    <vc-donut
-      background="#00F0F8FF"
-      text="Apuliaresell Feedback"
-      :sections="sections"
-    ></vc-donut>
+    <vc-donut v-bind="props">
+      <small>
+        <strong id="text">Apuliaresell</strong>
+      </small>
+    </vc-donut>
   </div>
 </template>
 
@@ -20,7 +20,18 @@ export default {
   data() {
     return {
       // datacollection: "",
-      sections: [{ value: 25 }, { value: 25 }],
+      props: {
+        size: 250,
+        sections: [
+          { label: "Jordan", value: 40 },
+          { label: "Yeezy", value: 20 },
+          { label: "Nike", value: 30 },
+          { label: "Other", value: 10 },
+        ],
+        thickness: 20,
+        hasLegend: true,
+        background: "#dedede",
+      },
     };
   },
   created() {

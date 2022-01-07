@@ -2299,11 +2299,25 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       // datacollection: "",
-      sections: [{
-        value: 25
-      }, {
-        value: 25
-      }]
+      props: {
+        size: 250,
+        sections: [{
+          label: "Jordan",
+          value: 40
+        }, {
+          label: "Yeezy",
+          value: 20
+        }, {
+          label: "Nike",
+          value: 30
+        }, {
+          label: "Other",
+          value: 10
+        }],
+        thickness: 20,
+        hasLegend: true,
+        background: "#dedede"
+      }
     };
   },
   created: function created() {// this.fillData();
@@ -40758,12 +40772,7 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _c(
-        "section",
-        { staticClass: "text-white", attrs: { id: "charts" } },
-        [_c("Chart")],
-        1
-      ),
+      _c("section", { attrs: { id: "charts" } }, [_c("Chart")], 1),
       _vm._v(" "),
       _c(
         "section",
@@ -41039,15 +41048,12 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "small" },
     [
-      _c("vc-donut", {
-        attrs: {
-          background: "#00F0F8FF",
-          text: "Apuliaresell Feedback",
-          sections: _vm.sections,
-        },
-      }),
+      _c("vc-donut", _vm._b({}, "vc-donut", _vm.props, false), [
+        _c("small", [
+          _c("strong", { attrs: { id: "text" } }, [_vm._v("Apuliaresell")]),
+        ]),
+      ]),
     ],
     1
   )
