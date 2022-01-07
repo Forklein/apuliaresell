@@ -58,7 +58,8 @@
         </div>
       </div>
     </section>
-    <section id="charts">
+    <section id="charts" class="mt-3">
+      >
       <Chart />
     </section>
     <section id="form" class="p-3">

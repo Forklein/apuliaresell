@@ -23,7 +23,7 @@
             </form>
         </div>
         <div class="col-2 image text-center p-2">
-            @if(strpos($image->image, "public") !== false)
+            @if ($image->contains($image->image, "public"))
             <img src="{{url("storage/$image->image")}}" alt="{{$image->name}}" style="width: 50%; height: 50%">
             @else
             <img src="{{$image->image}}" alt="{{$image->name}}" style="width: 50%; height: 50%">

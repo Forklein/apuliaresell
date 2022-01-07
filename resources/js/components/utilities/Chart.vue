@@ -3,7 +3,10 @@
     <!-- <line-chart :chart-data="datacollection"></line-chart> -->
     <vc-donut v-bind="props">
       <small>
-        <strong id="text">Apuliaresell</strong>
+        <strong id="text"
+          >Apuliaresell <br />
+          Products</strong
+        >
       </small>
     </vc-donut>
   </div>
@@ -23,10 +26,10 @@ export default {
       props: {
         size: 250,
         sections: [
-          { label: "Jordan", value: 40 },
-          { label: "Yeezy", value: 20 },
-          { label: "Nike", value: 30 },
-          { label: "Other", value: 10 },
+          { label: "Jordan 40%", value: 40 },
+          { label: "Yeezy 20%", value: 20 },
+          { label: "Nike 30%", value: 30 },
+          { label: "Other 10%", value: 10 },
         ],
         thickness: 20,
         hasLegend: true,

@@ -2079,6 +2079,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
  //components
 
 
@@ -2290,6 +2291,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 // import LineChart from "./LineChart.js";
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Chart",
@@ -2302,16 +2306,16 @@ __webpack_require__.r(__webpack_exports__);
       props: {
         size: 250,
         sections: [{
-          label: "Jordan",
+          label: "Jordan 40%",
           value: 40
         }, {
-          label: "Yeezy",
+          label: "Yeezy 20%",
           value: 20
         }, {
-          label: "Nike",
+          label: "Nike 30%",
           value: 30
         }, {
-          label: "Other",
+          label: "Other 10%",
           value: 10
         }],
         thickness: 20,
@@ -40772,7 +40776,12 @@ var render = function () {
         ]),
       ]),
       _vm._v(" "),
-      _c("section", { attrs: { id: "charts" } }, [_c("Chart")], 1),
+      _c(
+        "section",
+        { staticClass: "mt-3", attrs: { id: "charts" } },
+        [_vm._v("\n    >\n    "), _c("Chart")],
+        1
+      ),
       _vm._v(" "),
       _c(
         "section",
@@ -41051,7 +41060,11 @@ var render = function () {
     [
       _c("vc-donut", _vm._b({}, "vc-donut", _vm.props, false), [
         _c("small", [
-          _c("strong", { attrs: { id: "text" } }, [_vm._v("Apuliaresell")]),
+          _c("strong", { attrs: { id: "text" } }, [
+            _vm._v("Apuliaresell "),
+            _c("br"),
+            _vm._v("\n        Products"),
+          ]),
         ]),
       ]),
     ],
