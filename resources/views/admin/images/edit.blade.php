@@ -42,13 +42,14 @@
   const select = document.getElementById('mode');
   const file = document.getElementById('image-file');
   const link = document.getElementById('image-link');
-  select.addEventListener('change', function(){
-    if(this.value == 'link'){
+  select.addEventListener('change', (e) => { 
+    if(e.target.value == 'link'){
       file.classList.add('d-none');
       link.classList.add('d-block');
       link.value = '';
     }else{
       file.classList.remove('d-none');
+      link.classList.add('d-none');
       link.classList.remove('d-block');
     }
   })
