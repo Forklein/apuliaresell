@@ -2,7 +2,7 @@
   <main>
     <Loader v-if="isLoading" />
     <section id="jumbotron">
-      <div class="container d-flex">
+      <div class="container d-flex align-items-center">
         <div class="col-7 text-white">
           <div class="description py-5">
             <p class="h3" data-aos="zoom-in" data-aos-delay="500">

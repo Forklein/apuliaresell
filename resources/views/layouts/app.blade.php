@@ -7,6 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}@yield('title')</title>
     @yield('cdns')
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="shortcut icon" href="{{ asset('images/logo_circle.png' )}}" type="image/x-icon">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="vh-100">

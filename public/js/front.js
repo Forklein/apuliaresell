@@ -2227,6 +2227,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -6927,7 +6928,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".custom-navbar[data-v-1f42fb90] {\n  background: #6d81fd;\n  background: linear-gradient(90deg, #6d81fd 0%, #b96ffd 70%);\n}\n.custom-navbar .title[data-v-1f42fb90] {\n  font-family: \"Lobster\", cursive;\n  text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.5);\n  color: #e9ecc1;\n}", ""]);
+exports.push([module.i, ".title[data-v-1f42fb90] {\n  font-family: \"Montserrat\", Arial, sans-serif;\n  text-shadow: 16px 22px 11px rgba(0, 0, 0, 0.5);\n  color: #e9ecc1;\n}", ""]);
 
 // exports
 
@@ -40799,7 +40800,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { attrs: { id: "jumbotron" } }, [
-      _c("div", { staticClass: "container d-flex" }, [
+      _c("div", { staticClass: "container d-flex align-items-center" }, [
         _c("div", { staticClass: "col-7 text-white" }, [
           _c("div", { staticClass: "description py-5" }, [
             _c(
@@ -40887,102 +40888,59 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", [
-      _c(
-        "nav",
-        { staticClass: "custom-navbar navbar navbar-expand-lg navbar-light" },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "a",
-              { staticClass: "navbar-brand text-white", attrs: { href: "/" } },
-              [
-                _c(
-                  "h2",
-                  {
-                    staticClass: "title mb-5 text-center",
-                    staticStyle: { "font-size": "45px" },
-                  },
-                  [_vm._v("\n          Apuliaresell\n        ")]
-                ),
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "navbar-toggler",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "collapse",
-                  "data-target": "#navbarNavAltMarkup",
-                  "aria-controls": "navbarNavAltMarkup",
-                  "aria-expanded": "false",
-                  "aria-label": "Toggle navigation",
-                },
-              },
-              [_c("span", { staticClass: "navbar-toggler-icon" })]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "collapse navbar-collapse",
-                attrs: { id: "navbarNavAltMarkup" },
-              },
-              [
-                _c("div", { staticClass: "navbar-nav" }, [
-                  _c(
-                    "a",
-                    {
-                      staticClass: "nav-link navbar-toggler",
-                      attrs: { href: "#" },
-                    },
-                    [_vm._v("Home")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "nav-link navbar-toggler",
-                      attrs: { href: "#" },
-                    },
-                    [_vm._v("Features")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "nav-link navbar-toggler",
-                      attrs: { href: "#" },
-                    },
-                    [_vm._v("Pricing")]
-                  ),
-                ]),
-              ]
-            ),
-            _vm._v(" "),
-            _c("div", { staticClass: "navbar-nav" }, [
-              _c(
-                "a",
-                { staticClass: "nav-link text-white", attrs: { href: "#" } },
-                [_vm._v("Home")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "nav-link text-white", attrs: { href: "#" } },
-                [_vm._v("Features")]
-              ),
-              _vm._v(" "),
-              _c(
-                "a",
-                { staticClass: "nav-link text-white", attrs: { href: "#" } },
-                [_vm._v("Pricing")]
-              ),
-            ]),
+      _c("div", { staticClass: "container" }, [
+        _c("nav", { staticClass: "navbar navbar-expand-lg navbar-light" }, [
+          _c("a", { staticClass: "navbar-brand", attrs: { href: "#" } }, [
+            _c("h1", { staticClass: "title" }, [_vm._v("Apuliaresell")]),
           ]),
-        ]
-      ),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "navbar-toggler",
+              attrs: {
+                type: "button",
+                "data-toggle": "collapse",
+                "data-target": "#navbarSupportedContent",
+                "aria-controls": "navbarSupportedContent",
+                "aria-expanded": "false",
+                "aria-label": "Toggle navigation",
+              },
+            },
+            [_c("span", { staticClass: "navbar-toggler-icon" })]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse",
+              attrs: { id: "navbarSupportedContent" },
+            },
+            [
+              _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                _c("li", { staticClass: "nav-item active" }, [
+                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                    _vm._v("Home "),
+                    _c("span", { staticClass: "sr-only" }, [
+                      _vm._v("(current)"),
+                    ]),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                    _vm._v("Products"),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c("a", { staticClass: "nav-link" }, [_vm._v("About")]),
+                ]),
+              ]),
+            ]
+          ),
+        ]),
+      ]),
     ])
   },
 ]
@@ -54289,7 +54247,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\sarad\Desktop\Peppe\apuliaresell\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Laravel\apuliaresell\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
