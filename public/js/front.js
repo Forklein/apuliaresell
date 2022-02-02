@@ -2112,7 +2112,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var _this = this;
 
     return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-      var images;
+      var res, images;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -2123,30 +2123,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               return axios.get("".concat(_this.baseUri, "api/images"));
 
             case 4:
-              images = _context.sent;
-              _this.images = images.data.images;
-              _context.next = 12;
+              res = _context.sent;
+              images = res.data.images;
+              _this.images = images;
+              _context.next = 14;
               break;
 
-            case 8:
-              _context.prev = 8;
+            case 9:
+              _context.prev = 9;
               _context.t0 = _context["catch"](0);
-              console.log(_context.t0);
-              _this.errorApi = true;
 
-            case 12:
-              _context.prev = 12;
+              if (!_context.t0) {
+                _context.next = 14;
+                break;
+              }
+
+              _this.errorApi = true;
+              throw new Error("Error Api");
+
+            case 14:
+              _context.prev = 14;
               setTimeout(function () {
                 return _this.isLoading = false;
               }, 1500);
-              return _context.finish(12);
+              return _context.finish(14);
 
-            case 15:
+            case 17:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 8, 12, 15]]);
+      }, _callee, null, [[0, 9, 14, 17]]);
     }))();
   }
 });
@@ -54247,7 +54254,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Laravel\apuliaresell\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\sarad\Desktop\Peppe\apuliaresell\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

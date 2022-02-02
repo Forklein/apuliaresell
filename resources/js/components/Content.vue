@@ -102,11 +102,14 @@ export default {
   async created() {
     try {
       this.isLoading = true;
-      const images = await axios.get(`${this.baseUri}api/images`);
-      this.images = images.data.images;
+      const res = await axios.get(`${this.baseUri}api/images`);
+      const { images } = res.data;
+      this.images = images;
     } catch (error) {
-      console.log(error);
-      this.errorApi = true;
+      if (error) {
+        this.errorApi = true;
+        throw new Error("Error Api");
+      }
     } finally {
       setTimeout(() => (this.isLoading = false), 1500);
     }
